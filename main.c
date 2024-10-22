@@ -31,7 +31,18 @@ void delay(int miliseconds) {
 }
 
 int lancerpartie(char *j1[10], char *j2[10],char *j3[10], char *j4[10], int nbjoueur, int partie_en_cours){
-  
+  // recuperation d'une partie en cours ou non
+  if(partie_en_cours){
+    //recuperation de la partie en cours dans le fichier partie.txt
+    //plateau = recup_partie
+  }
+  while( ! is_winner()){
+    //jouer le tour du joueur n avec n = i % nbjoueur
+      //choix entre bouger pion ou mettre bariere
+      //affichage plateau updaté
+
+  }
+  //calcul du socre en fonction du plateau
 }
 
 
