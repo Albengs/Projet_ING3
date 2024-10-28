@@ -44,7 +44,42 @@ int lancerpartie(char *j1[10], char *j2[10],char *j3[10], char *j4[10], int nbjo
   }
   //calcul du socre en fonction du plateau
 }
+//code pour +       0xC5
+//code pour trait H 0xC4
+//code pour trait V 0xB3
 
+
+void init_tabl(char * tabl[TAILLE][TAILLE]){
+  for(int i = 0 ; i < TAILLE ; i++){
+    for(int j = 0 ; j < TAILLE ; j++){
+      
+      if (i%2) {
+        if (j%2){
+          tabl[i][j]='v' // un +
+        }
+        else{
+          tabl[i][j]='v' // un trait H
+        }
+      }
+      else{
+        if (j%2){
+          tabl[i][j]=' '// un espace
+        }
+        else{
+          tabl[i][j]='v' // un triat V
+        }
+      }
+    }
+  }
+}
+
+void affichage(tableau[TAILLE][TAILLE]){
+  for(int i = 0 ; i < TAILLE ; i++){
+    for(int j = 0 ; j < TAILLE ; j++){
+      printf("%c",tabl[i][j])
+    }
+  }
+}
 
 int main(void) {
   // declaration des variables
@@ -57,6 +92,10 @@ int main(void) {
   int nbjoueur = 0;
   int score;
   int partie_en_cours = 0;
+  char tableau[TAILLE][TAILLE];
+  //initialisation du tableau
+  init_tabl(&tableau);
+  affichage(tableau);
 
   do {
     // l'utilisateur choisis ce qu'il veut faire
