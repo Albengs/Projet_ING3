@@ -30,14 +30,14 @@ int menu(void){
 void delay(int miliseconds) {
     usleep(1000 * miliseconds);
 }
-
+/*
 int lancerpartie(char *j1[10], char *j2[10],char *j3[10], char *j4[10], int nbjoueur, int partie_en_cours){
   // recuperation d'une partie en cours ou non
   if(partie_en_cours){
     //recuperation de la partie en cours dans le fichier partie.txt
     //plateau = recup_partie
   }
-  while( ! is_winner()){
+  while( ! is_winner(tableau)){
     //jouer le tour du joueur n avec n = i % nbjoueur
       //choix entre bouger pion ou mettre bariere
       //affichage plateau updaté
@@ -56,32 +56,32 @@ void init_tabl(char * tabl[TAILLE][TAILLE]){
       
       if (i%2) {
         if (j%2){
-          tabl[i][j]='0xC5' // un +
+          tabl[i][j]='0xC5';  // un +
         }
         else{
-          tabl[i][j]='0xC4' // un trait H
+          tabl[i][j]='0xC4';// un trait H
         }
       }
       else{
         if (j%2){
-          tabl[i][j]=' '// un espace
+          tabl[i][j]=' ';// un espace
         }
         else{
-          tabl[i][j]='0xB3' // un triat V
+          tabl[i][j]='0xB3'; // un triat V
         }
       }
     }
   }
 }
 
-void affichage(tableau[TAILLE][TAILLE]){
+void affichage(char tableau[TAILLE][TAILLE]){
   for(int i = 0 ; i < TAILLE ; i++){
     for(int j = 0 ; j < TAILLE ; j++){
-      printf("%c",tabl[i][j]);
+      printf("%c",tableau[i][j]);
     }
   }
 }
-
+*/
 int main(void) {
   // declaration des variables
   int choix;
@@ -95,9 +95,10 @@ int main(void) {
   int partie_en_cours = 0;
   char tableau[TAILLE][TAILLE];
   //initialisation du tableau
-  init_tabl(&tableau);
-  affichage(tableau);
-
+  //init_tabl(&tableau);
+  // affichage(tableau);
+  printf("%c",0xc5);
+  /*
   do {
     // l'utilisateur choisis ce qu'il veut faire
     do {
@@ -157,5 +158,6 @@ int main(void) {
     // enregistrement des scores dans scores.txt
 
   } while (choix != 5);
+  */
   return 0;
 }
