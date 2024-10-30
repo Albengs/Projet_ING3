@@ -3,8 +3,9 @@
 #include <string.h>
 #include <unistd.h>
 
-#define TAILLE 17
+
 #define TRUC 10
+#define TAILLE 17
 
 int p_int(int val, int b_inf, int b_sup){
   // revoie 0 si aucun probleme et 1 sinon (p pour protection int)
@@ -55,10 +56,10 @@ void init_tabl(char * tabl[TAILLE][TAILLE]){
       
       if (i%2) {
         if (j%2){
-          tabl[i][j]='v' // un +
+          tabl[i][j]='0xC5' // un +
         }
         else{
-          tabl[i][j]='v' // un trait H
+          tabl[i][j]='0xC4' // un trait H
         }
       }
       else{
@@ -66,7 +67,7 @@ void init_tabl(char * tabl[TAILLE][TAILLE]){
           tabl[i][j]=' '// un espace
         }
         else{
-          tabl[i][j]='v' // un triat V
+          tabl[i][j]='0xB3' // un triat V
         }
       }
     }
@@ -76,7 +77,7 @@ void init_tabl(char * tabl[TAILLE][TAILLE]){
 void affichage(tableau[TAILLE][TAILLE]){
   for(int i = 0 ; i < TAILLE ; i++){
     for(int j = 0 ; j < TAILLE ; j++){
-      printf("%c",tabl[i][j])
+      printf("%c",tabl[i][j]);
     }
   }
 }
