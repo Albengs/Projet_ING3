@@ -3,7 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 
-
+#define TAILLE 17
 #define TRUC 10
 
 int p_int(int val, int b_inf, int b_sup){
